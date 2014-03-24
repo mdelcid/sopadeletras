@@ -1,0 +1,129 @@
+package sopa;
+
+import java.util.Scanner;
+
+public class Sopa 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+	      Scanner lea=new Scanner(System.in);
+	      String palabras[]=  {"hola","mundo","madrid","espana","ubuntu","projecto","cuaderno","linux","honduras","tren","aprobar","lapiz","diego","sindy","iglesia"};
+	      char letras[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+	      
+	      
+	      int filas=10,columnas=10 ;   
+	      char tablero[][]=new char [filas][columnas];
+	      int nu;
+	      do{
+	         System.out.println("1.      Definir Matriz");
+	         System.out.println("2.             Jugar    " );
+	         System.out.println("3.             Salir      ");
+
+	do{
+	      System.out.print("Ingrese el numero de la opcion que desea hacer: ");
+	      nu=lea.nextInt();
+	      }while(!(nu==1||nu==2||nu==3));
+	      
+	      for(int x=0;x<20;x++){
+	         System.out.println(" ");
+	      }
+
+	            
+	      switch (nu){
+	         case 1:
+	do{
+	            System.out.println("Ingrese Numero de filas: ");
+	            filas=lea.nextInt();
+	            System.out.println("Ingrese Numero de Columnas: ");
+	            columnas=lea.nextInt();
+	            
+	            }while ((filas<=10&&filas<=20)&&(columnas<=10&&columnas<=20));
+
+	tablero=new char [filas][columnas];
+	            for(int x=0;x<30;x++){
+	               System.out.println(" ");
+	            }
+	            
+	            
+	            break;
+	            
+	         case 2:
+	         Random let=new Random();
+	         Random words=new Random();
+	         Random fil=new Random();
+	         Random col=new Random();
+	         char letra[]=new char[filas*columnas];
+	         String pala[]=new String[5];
+	         for(int x=0;x<filas;x++){
+	            for(int y=0;y<columnas;y++){   
+	               for(int a=0;a<columnas;a++){
+	                  int le=let.nextInt(letras.length);
+	                  letra[a]=letras[le];
+	                  tablero
+
+	    [y]=letra[a];
+
+
+	                  break;
+	               }
+	                  
+	                  if (x%2==0){
+	                  System.out.print(tablero
+
+	    [y]);
+
+
+	                  }
+	                     else{
+	                     System.out.print(tablero
+
+	    [y]);
+
+
+	                     }                  
+	            }
+	            System.out.println(" ");   
+	         }            
+	         
+	         for(int a=0;a<filas;a++){
+	            for(int b=0;b<columnas;b++){
+	               for(int c=0;c<5;c++){
+	               int pal=words.nextInt(palabras.length);
+	               pala[c]=palabras[pal];
+	               }
+	            }            
+	         }
+	         
+
+	               for(int c=0;c<1;c++){
+	                  int randomfila=fil.nextInt(filas);
+	                  int randomcolumnas=col.nextInt(columnas);
+	                  int longitud=pala[c].length();
+	                  System.out.println(randomfila);
+	                  System.out.println(randomcolumnas);
+	                  System.out.println(longitud);
+	                  System.out.println(pala[c]);                  
+	                  if(c==0){
+	                     for(int q=randomfila;q<randomfila-pala[c].length();q--){
+	                        for(int w=0;w<pala[c].length();w++)
+	                        tablero[q][randomcolumnas]=pala[c].charAt(w);
+	                        
+	                        }
+	                     }
+	                     
+	                     
+	               }
+	         }
+	      
+	         
+	      }while (nu==1);   
+	   }
+	   
+	
+
+
+	}
+
+
